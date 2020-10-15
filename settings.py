@@ -33,7 +33,7 @@ class Settings:
         # Speed settings.
         self.ship_speed = 0.5
         self.bullet_speed = 0.5
-        self.alien_speed = 0.33
+        self.alien_speed = 0.2
 
         # fleet_direction of 1 indicates right; -1 indicates left.
         self.fleet_direction = 1

@@ -189,6 +189,10 @@ class AlienInvasion:
             # Pause.
             sleep(0.5)
         else:
+            # Write the new high score to file, if there is one.
+            if self.stats.score == self.stats.high_score:
+                self.stats.write_high_score(self.stats.high_score)
+
             self.stats.game_active = False
             pygame.mouse.set_visible(True)
 

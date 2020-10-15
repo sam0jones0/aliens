@@ -10,10 +10,20 @@ class GameStats:
         self.game_active = False
 
         # High score should never be reset.
-        self.high_score = 0
+        self.high_score = self.read_high_score()
 
     def reset_stats(self):
         """Initialize statistics that can change during the game."""
         self.ships_left = self.settings.ship_limit
         self.score = 0
         self.level = 1
+
+    def read_high_score(self):
+        """Returns high score as int, as read from 'highscore' file."""
+        with open("highscore", "r") as file:
+            return int(file.read())
+
+    def write_high_score(self, high_score):
+        """Writes high score to file."""
+        with open("highscore", "w+") as file:
+            file.write(str(high_score))
